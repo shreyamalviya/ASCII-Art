@@ -49,7 +49,8 @@ def editPhoto(photoPath, style):
     """
     img = Image.open(photoPath)
     imgWidth, imgHeight = img.size 
-    img = img.resize((round(imgWidth/3), round(imgHeight/3)))
+    aspectRatio = imgHeight/imgWidth
+    img = img.resize((50, int(aspectRatio * 50)))
     imgWidth, imgHeight = img.size 
     pixels = img.load()
     
